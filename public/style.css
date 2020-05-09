@@ -1,0 +1,66 @@
+@charset "UTF-8";
+@import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap';
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root {
+    --color-green: 	#90EE90;
+    --color-purple: #7159c1;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-green);
+}
+
+/*---------------Header-------------*/
+
+header {
+    background-color: whitesmoke;
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.links {
+    font-size: 22px;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--color-purple);
+    position: relative;
+}
+
+.links a + a {
+    margin-left: 32px;
+}
+
+.links a.active {
+    font-weight: bold;
+    color: var(--color-green);
+}
+
+.links a:hover {
+    color: var(--color-green);
+}
+
+.links a::after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--color-green);
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+
+.links a:hover::after {
+    width: 100%;
+    transition: width 150ms ease-in-out;
+}
