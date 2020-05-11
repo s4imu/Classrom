@@ -8,13 +8,18 @@
 }
 
 :root {
-    --color-green: 	#90EE90;
-    --color-purple: #7159c1;
+    --dark: 	#262833;
+    --green: #4acfac;
+    --orange: #ffaf5f;
+    --purple: #7e8ce0;
+    --blue: #36c7d0;
+    --salmon: #ffa4be;
+    --gray: #aaa;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--color-green);
+    background-color: var(--green);
 }
 
 /*---------------Header-------------*/
@@ -33,7 +38,7 @@ header {
 
 .links a {
     text-decoration: none;
-    color: var(--color-purple);
+    color: var(--purple);
     position: relative;
 }
 
@@ -43,18 +48,18 @@ header {
 
 .links a.active {
     font-weight: bold;
-    color: var(--color-green);
+    color: var(--green);
 }
 
 .links a:hover {
-    color: var(--color-green);
+    color: var(--green);
 }
 
 .links a::after{
     content: "";
     width: 0;
     height: 2px;
-    background-color: var(--color-green);
+    background-color: var(--green);
     position: absolute;
     left: 0;
     bottom: -4px;
@@ -64,3 +69,92 @@ header {
     width: 100%;
     transition: width 150ms ease-in-out;
 }
+
+/*---------Card------------*/
+.card {
+    background-color: white;
+    width: 800px;
+    min-height: 400px;
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    box-shadow: 0px 2px 6px -2px rgba(0,0,0,.1);
+    animation: up 400ms ease-out;
+}
+
+.avatar {
+    background: url("https://source.unsplash.com/collection/10090394/500x500") no-repeat center center / cover;
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    } to {
+        opacity: 1;
+    }
+}
+
+.details {
+    padding: 32px;
+}
+
+.details .item {
+    border-top: 1px solid var(--salmon);
+    padding: 16px 0;
+}
+
+.details .item:first-of-type{
+    border: none;
+}
+
+.details h3,
+.details .item div:nth-child(1) {
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--purple);
+    letter-spacing: 0.7px;
+    font-weight: bold;
+
+}
+
+.details .item div:nth-child(2) {
+    color: var(--dark);
+    font-size: 18px;
+
+}
+
+.details h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--green);
+}
+
+.details .item  span{
+    padding: 8px 16px;
+    background-color: rgba(222, 232, 236, 0.9);
+    border-radius: 16px;
+    color: var(--blue);
+    margin-top: 8px;
+    margin-left: 8px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.details .item  span{
+    position: relative;
+}
+
+.details .item  span + span::before {
+    content: "";
+    width: 2px;
+    height: 32px;
+    background-color: var(--blue);
+    position: absolute;
+    left: -6px;
+    top: 2px;
+    transform: rotate(20deg);
+    
+}
+
