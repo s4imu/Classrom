@@ -4,6 +4,7 @@ const routes = require('./routes')
 
 const server = express()
 
+server.use(express.urlencoded({ extended: true}))
 server.use(express.static('public'))
 server.use(routes)
 
@@ -15,6 +16,6 @@ nunjucks.configure('views', {
     noCache: true
 })
 
-server.listen(5000, function() {
+server.listen(4000, function() {
 
 }) 

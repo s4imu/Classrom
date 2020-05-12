@@ -130,7 +130,7 @@ header {
     color: var(--green);
 }
 
-.details .item  span{
+.since  span{
     padding: 8px 16px;
     background-color: rgba(222, 232, 236, 0.9);
     border-radius: 16px;
@@ -140,13 +140,11 @@ header {
     display: inline-block;
     font-weight: bold;
     font-size: 16px;
-}
-
-.details .item  span{
     position: relative;
 }
 
-.details .item  span + span::before {
+
+ .since span + span::before {
     content: "";
     width: 2px;
     height: 32px;
@@ -158,3 +156,42 @@ header {
     
 }
 
+/*---------Form------------*/
+input {
+    width: 100%;
+    outline: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type="radio"] {
+    width: initial;
+    margin-right: 4px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+button[type="submit"] {
+    padding: 8px 32px;
+    background-color: var(--green);
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 32px;
+    width: 100%;
+}
+ .details .item span {
+    padding: 8px 16px;
+    background-color: rgba(222, 232, 236, 0.9);
+    border-radius: 16px;
+    color: var(--blue);
+    margin-top: 8px;
+    margin-left: 8px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+}
