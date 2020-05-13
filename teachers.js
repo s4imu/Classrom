@@ -32,6 +32,6 @@ exports.post = function(req, res) {
             return res.send("It wasn't possible complete your request")
         }
 
-        return res.redirect("/instructors")
+        return res.redirect("/teachers")
     })
 }

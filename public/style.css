@@ -147,7 +147,7 @@ header {
  .since span + span::before {
     content: "";
     width: 2px;
-    height: 32px;
+    height: 28px;
     background-color: var(--blue);
     position: absolute;
     left: -6px;
@@ -193,5 +193,5 @@ button[type="submit"] {
     margin-left: 8px;
     display: inline-block;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
 }
