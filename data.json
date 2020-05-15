@@ -1,16 +1,6 @@
 {
   "teachers": [
     {
-      "id": 1,
-      "name": "symon",
-      "avatarUrl": "https://bit.ly/3buM7CS",
-      "birth": 889401600000,
-      "education": "highSchool",
-      "classType": "clasroom",
-      "monitoring": "Math, Informatics",
-      "createdAt": 1589450548884
-    },
-    {
       "id": 2,
       "name": "Cristhian",
       "avatarUrl": "https://bit.ly/3bxpRbt",
@@ -21,24 +11,24 @@
       "createdAt": 1589450630003
     },
     {
-      "id": 3,
-      "name": "filo",
-      "avatarUrl": "https://bit.ly/2WwqlKo",
+      "id": "3",
+      "name": "Filomena",
+      "avatarUrl": "https://bit.ly/2AxQfVO",
       "birth": 644457600000,
-      "education": "masters",
+      "education": "higher",
       "classType": "clasroom",
       "monitoring": "Astronomy, Physics",
       "createdAt": 1589450732065
     },
     {
-      "id": 4,
-      "name": "Joane",
-      "avatarUrl": "https://bit.ly/3bsGrJz",
-      "birth": 314496000000,
-      "education": "doctorate",
+      "id": 5,
+      "name": "symon cristhian",
+      "avatarUrl": "https://bit.ly/3buM7CS",
+      "birth": 889401600000,
+      "education": "higher",
       "classType": "clasroom",
-      "monitoring": "Algorithms, Machine Learning, Data Science",
-      "createdAt": 1589456979989
+      "monitoring": "Informatics",
+      "createdAt": 1589578240478
     }
   ]
 }

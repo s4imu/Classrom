@@ -183,7 +183,8 @@ a.button {
     font-size: 16px;
     border-radius: 4px;
     margin-top: 32px;
-    width: 100%;
+    width: 45%;
+    cursor: pointer;
 }
  .details .item span {
     padding: 8px 16px;
@@ -197,10 +198,25 @@ a.button {
     font-size: 14px;
 }
 
+#edit {
+    width: 100%;
+}
 
 a.button {
     display: block;
     box-sizing: border-box;
     text-align: center;
     text-decoration: none;
+}
+
+.details {
+    position: relative;
+}
+
+#delete {
+    position: absolute;
+    box-sizing: border-box;
+    bottom: 32px;
+    right: 32px;
+    background-color: lightcoral;
 }
