@@ -130,7 +130,7 @@ header {
     color: var(--green);
 }
 
-.since  span{
+span#monitoring{
     padding: 8px 16px;
     background-color: rgba(222, 232, 236, 0.9);
     border-radius: 16px;
@@ -141,19 +141,6 @@ header {
     font-weight: bold;
     font-size: 16px;
     position: relative;
-}
-
-
- .since span + span::before {
-    content: "";
-    width: 2px;
-    height: 28px;
-    background-color: var(--blue);
-    position: absolute;
-    left: -6px;
-    top: 2px;
-    transform: rotate(20deg);
-    
 }
 
 /*---------Form------------*/
@@ -219,4 +206,66 @@ a.button {
     bottom: 32px;
     right: 32px;
     background-color: lightcoral;
+}
+
+/*---------TABLE------------*/
+
+.tableConteiner {
+    display: block;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.tableConteiner table {
+    border-spacing: 0;
+}
+
+.tableConteiner thead tr th {
+    text-align: left;
+}
+
+td, th {
+    padding: 16px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+th {
+    text-transform: uppercase;
+    color: #777;
+    font-size: 14px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+}
+
+tbody tr td:first-child span {
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 3px 1px 6px -4px black;
+    border: 2px solid white;
+}
+
+tbody tr td:last-child a {
+    background-color: var(--green);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.tableConteiner thead tr th:last-child,
+td:last-child {
+    text-align: center;
 }

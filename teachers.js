@@ -2,6 +2,17 @@ const fs = require('fs')
 const data = require('./data.json')
 const { age, education, date } = require('./utils')
 
+exports.index = function(req, res){
+    let teachers = []
+        for (let teacher of data.teachers){
+            teachers.push({
+                ...teacher,
+                monitoring: teacher.monitoring.split(",")
+            })
+        }
+    return res.render('teachers/index', {teachers})
+ }
+
 exports.post = function(req, res) {
     const keys = Object.keys(req.body)
 
@@ -16,7 +27,7 @@ exports.post = function(req, res) {
     const createdAt = Date.now()
     birth = Date.parse(birth)
     const id = Number(data.teachers.length + 1)
-
+    monitoring = monitoring.split(",")
     data.teachers.push({
         id,
         name,
@@ -98,6 +109,7 @@ exports.update = function(req, res) {
         ...foundTeacher,
         ...req.body,
         birth: Date.parse(req.body.birth),
+        id: Number(req.body.id)
     }
 
     data.teachers[index] = teacher

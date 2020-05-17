@@ -2,40 +2,32 @@
 
 {% block content %}
 
-    <div class="card">
-        <section class="avatar">
-        </section>
-        <section class="details">
-            <h3>Details</h3>
-            <div class="item">
-                <div>Name</div>
-                <div>Symon Cristhian</div>
-            </div>
-            <div class="item">
-                <div>Age</div>
-                <div>22 years</div>
-            </div>
-            <div class="item">
-                <div>Education Level</div>
-                <div>Software Engineering degree</div>
-            </div>
-            <div class="item">
-                <div>Class type</div>
-                <div>Presential</div>
-            </div>
-            <div class="item">
-                <div>Monitoring</div>
-                <div>Informatics</div>
-            </div>
-            <div class="item">
-                <div >Since</div>
-                <div class="since">
-                <span>05</span>
-                <span>02</span>
-                <span>2019</span>
-            </div>
-            </div>
-        </section>
+    <div class="card tableConteiner">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Teacher</th>
+                    <th>Monitoring</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for teacher in teachers %}
+                    <tr>                   
+                        <td>
+                            <span style="background-image: url({{teacher.avatarUrl}})"></span>
+                            {{teacher.name}}
+                        </td>
+                        <td>
+                            {% for monitor in teacher.monitoring %}
+                                <span id="monitoring">{{monitor}}</span>
+                            {% endfor %}
+                        </td>
+                        <td><a href="/teachers/{{teacher.id}}">View</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 
 {% endblock content %}

@@ -1,7 +1,7 @@
 {
   "teachers": [
     {
-      "id": 2,
+      "id": 1,
       "name": "Cristhian",
       "avatarUrl": "https://bit.ly/3bxpRbt",
       "birth": 810086400000,
@@ -11,17 +11,17 @@
       "createdAt": 1589450630003
     },
     {
-      "id": "3",
+      "id": 2,
       "name": "Filomena",
       "avatarUrl": "https://bit.ly/2AxQfVO",
       "birth": 644457600000,
-      "education": "higher",
+      "education": "doctorate",
       "classType": "clasroom",
-      "monitoring": "Astronomy, Physics",
+      "monitoring": "Astronomy, Physics, Chemistry",
       "createdAt": 1589450732065
     },
     {
-      "id": 5,
+      "id": 3,
       "name": "symon cristhian",
       "avatarUrl": "https://bit.ly/3buM7CS",
       "birth": 889401600000,
