@@ -1,4 +1,33 @@
 {
+  "students": [
+    {
+      "avatarUrl": "https://bit.ly/3bCnBQc",
+      "name": "Mario",
+      "email": "mario@nintendo.us",
+      "birth": 1081728000000,
+      "schoolYear": "9th",
+      "classHours": "3",
+      "id": 2
+    },
+    {
+      "avatarUrl": "https://bit.ly/2LFCV3S",
+      "name": "Juniper",
+      "email": "juniper@email.com",
+      "birth": 1113955200000,
+      "schoolYear": "10th",
+      "classHours": "4",
+      "id": 3
+    },
+    {
+      "avatarUrl": "https://bit.ly/3g7AEwD",
+      "name": "Caillou",
+      "email": "ca.illou@outlook.com",
+      "birth": 1147651200000,
+      "schoolYear": "6th",
+      "classHours": "2",
+      "id": 4
+    }
+  ],
   "teachers": [
     {
       "id": 1,

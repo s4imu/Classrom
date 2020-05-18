@@ -32,6 +32,31 @@ module.exports = {
         const month = `0${date.getUTCMonth() + 1}`.slice(-2)
         const day = `0${date.getUTCDate()}`.slice(-2)
 
-        return `${year}-${month}-${day}`
+        return {
+            day,
+            month,
+            year,
+            iso: `${year}-${month}-${day}`,
+            birthDay: `${day}/${month}`
+        } 
+    },
+    grade: function education(schoolYear) {
+        let grade =  "6th Grade"
+
+        if(schoolYear == "7th") {
+            grade = "7th Grade"
+        } else if(schoolYear == "8th") {
+            grade = "8th Grade"
+        } else if(schoolYear == "9th") {
+            grade = "Freshman Year"
+        } else if(schoolYear == "10th") {
+            grade = "Sophomore Year"
+        } else if(schoolYear == "11th") {
+            grade = "Junior Year"
+        }  else if(schoolYear == "12th") {
+            grade = "Senior Year"
+        }
+        
+        return grade
     }
 }

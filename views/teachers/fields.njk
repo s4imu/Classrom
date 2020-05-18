@@ -23,10 +23,10 @@
                 <div>Education Level</div>
                 <div>
                     <select name="education" value="{{teacher.education}}">
-                        <option value="highSchool">High school degree</option>
-                        <option value="higher">Higher Education degree</option>
-                        <option value="masters">Master's degree</option>
-                        <option value="doctorate">Doctorate degree</option>
+                        <option value="highSchool" {% if teacher.education == "highSchool" %} selected {% endif %}>High school degree</option>
+                        <option value="higher" {% if teacher.education == "higher" %} selected {% endif %}>Higher Education degree</option>
+                        <option value="masters" {% if teacher.education == "masters" %} selected {% endif %}>Master's degree</option>
+                        <option value="doctorate" {% if teacher.education == "doctorate" %} selected {% endif %}>Doctorate degree</option>
                     </select>
                 </div>
             </div>
@@ -48,4 +48,6 @@
                     value="{{teacher.monitoring}}">
                 </div>
             </div>
-            <button type="submit">Save</button>
+            <button type="submit" class="fullWidth">Save</button>
+
+             <script src="/script.js"></script>

@@ -1,0 +1,36 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+    <div class="card tableConteiner">
+        <a href="http:/students/create">Register</a>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Email</th>
+                    <th>School Year</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                    <tr>                   
+                        <td>
+                            <span style="background-image: url({{student.avatarUrl}})"></span>
+                            {{student.name}}
+                        </td>
+                        <td>
+                            {{student.email}}
+                        </td>
+                        <td>
+                            <span id="schoolYear">{{student.schoolYear}}</span>
+                        </td>
+                        <td><a href="/students/{{student.id}}">View</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock content %}
