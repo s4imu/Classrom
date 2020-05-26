@@ -15,14 +15,14 @@
             <div class="item">
                 <div>Birth's date</div>
                 <div>
-                    <input type="date" name="birth"
-                    value="{{teacher.birth}}">
+                    <input type="date" name="birthDate"
+                    value="{{teacher.birthDate}}">
                 </div>
             </div>
             <div class="item">
                 <div>Education Level</div>
                 <div>
-                    <select name="education" value="{{teacher.education}}">
+                    <select name="educationLevel" value="{{teacher.educationLevel}}">
                         <option value="highSchool" {% if teacher.education == "highSchool" %} selected {% endif %}>High school degree</option>
                         <option value="higher" {% if teacher.education == "higher" %} selected {% endif %}>Higher Education degree</option>
                         <option value="masters" {% if teacher.education == "masters" %} selected {% endif %}>Master's degree</option>
@@ -42,10 +42,10 @@
                 </div>
             </div>
             <div class="item">
-                <div>Monitoring</div>
+                <div>Subjects Taught</div>
                 <div>
-                    <input type="text" name="monitoring" placeholder="Type the subjects separated by commas"
-                    value="{{teacher.monitoring}}">
+                    <input type="text" name="subjectsTaught" placeholder="Type the subjects separated by commas"
+                    value="{{teacher.subjectsTaught}}">
                 </div>
             </div>
             <button type="submit" class="fullWidth">Save</button>

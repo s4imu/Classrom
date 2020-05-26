@@ -19,7 +19,7 @@
         </div>
         <div class="item">
             <div>Graduation</div>
-            <div>{{teacher.education}}</div>
+            <div>{{teacher.educationLevel}}</div>
         </div>
         <div class="item">
             <div>Class Type</div>
@@ -28,8 +28,8 @@
         <div class="item">
             <div>Acompanhamento</div>
             <div>
-                {% for monitor in teacher.monitoring %}
-                    <span id="monitoring">{{monitor}}</span>
+                {% for subject in teacher.subjectsTaught %}
+                    <span id="monitoring">{{subject}}</span>
                 {% endfor %}
             </div>
         </div>

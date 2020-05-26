@@ -5,4 +5,4 @@ A website to connect tutors and students
 
 - Also uses express in the back-end to manage the server;
 
--Starting database using SQL and Postgres;
+- Starting database using SQL and Postgres;
