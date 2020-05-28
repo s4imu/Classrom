@@ -38,7 +38,7 @@ module.exports = {
             year,
             iso: `${year}-${month}-${day}`,
             birthDay: `${day}/${month}`,
-            format: `${day}-${month}-${year}`
+            format: `${day}/${month}/${year}`
         } 
     },
     grade(schoolYear) {
@@ -59,5 +59,16 @@ module.exports = {
         }
         
         return grade
+    },
+    array(array) {
+        let newArray = []
+        for (let element of array){
+            newArray.push({
+                ...element,
+                subjects_taught: element.subjects_taught.split(",")
+            })
+        }
+
+        return newArray
     }
 }

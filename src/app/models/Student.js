@@ -19,23 +19,25 @@ module.exports = {
     
         const query = `
         INSERT INTO students (
-            avatarUrl,
+            avatar_url,
             name,
             email,
             birth,
-            schoolYear,
-            classHours
-        ) VALUES ($1, $2, $3, $4, $5, $6)
+            school_year,
+            class_hours,
+            teacher_id
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7)
         RETURNING id
         `
 
         const values = [
-            data.avatarUrl,
+            data.avatar_url,
             data.name,
             data.email,
-            date(data.birthDate).iso,
-            data.schoolYear,
-            data.classHours
+            date(data.birth).iso,
+            data.school_year,
+            data.class_hours,
+            data.teacher
         ]
 
         db.query(query, values, function(err, results) {
@@ -48,9 +50,10 @@ module.exports = {
     },
     find(id, callback){
         db.query(`
-        SELECT *
-        FROM students
-        WHERE id = $1`, [id], function(err, results) {
+        SELECT students.*, teachers.name AS teacher_name  
+        FROM students 
+        LEFT JOIN teachers ON (students.teacher_id = teachers.id)
+        WHERE students.id = $1`, [id], function(err, results) {
             if(err) {
                 throw `Database error! ${err}`
             }
@@ -61,22 +64,24 @@ module.exports = {
     update(data, callback) {
         const query = `
         UPDATE students SET
-            avatarUrl=($1),
+            avatar_url=($1),
             name=($2),
             email=($3),
             birth=($4),
-            schoolYear=($5),
-            classHours=($6)
-            WHERE id = $7
-            `
+            school_year=($5),
+            class_hours=($6),
+            teacher_id=($7)
+        WHERE id = $8
+        `
 
         const values = [
-            data.avatarUrl,
+            data.avatar_url,
             data.name,
             data.email,
-            date(data.birthDate).iso,
-            data.schoolYear,
-            data.classHours,
+            date(data.birth).iso,
+            data.school_year,
+            data.class_hours,
+            data.teacher,
             data.id
         ]
 
@@ -96,6 +101,18 @@ module.exports = {
             }
 
             return callback()
+        })
+    },
+    teacherSelectOption(callback) {
+        db.query(`
+        SELECT name, id 
+        FROM teachers
+        `,function(err, results) {
+            if(err){
+                throw `Database error! ${err}`
+            }
+
+            callback(results.rows)
         })
     }
 }

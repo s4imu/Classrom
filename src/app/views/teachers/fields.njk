@@ -1,8 +1,8 @@
             <div class="item">
                 <div>Avatar URL</div>
                 <div>
-                    <input type="url" name="avatarUrl" placeholder="https://www."
-                    value="{{teacher.avatarUrl}}">
+                    <input type="url" name="avatar_url" placeholder="https://www."
+                    value="{{teacher.avatar_url}}">
                 </div>
             </div>
             <div class="item">
@@ -15,14 +15,14 @@
             <div class="item">
                 <div>Birth's date</div>
                 <div>
-                    <input type="date" name="birthDate"
-                    value="{{teacher.birthDate}}">
+                    <input type="date" name="birth_date"
+                    value="{{teacher.birth_date}}">
                 </div>
             </div>
             <div class="item">
                 <div>Education Level</div>
                 <div>
-                    <select name="educationLevel" value="{{teacher.educationLevel}}">
+                    <select name="education_level" value="{{teacher.education_level}}">
                         <option value="highSchool" {% if teacher.education == "highSchool" %} selected {% endif %}>High school degree</option>
                         <option value="higher" {% if teacher.education == "higher" %} selected {% endif %}>Higher Education degree</option>
                         <option value="masters" {% if teacher.education == "masters" %} selected {% endif %}>Master's degree</option>
@@ -33,10 +33,10 @@
             <div class="item">
                 <div>Class type</div>
                 <div>
-                    <span><input type="radio" name="classType" value="clasroom" {% if teacher.classType == 'classroom' %}
+                    <span><input type="radio" name="class_type" value="classroom" {% if teacher.class_type == 'classroom' %}
                     checked
                     {% endif %}> Classroom teaching</span>
-                    <span><input type="radio" name="classType" value="distance" {% if teacher.classType == 'distance' %}
+                    <span><input type="radio" name="class_type" value="distance" {% if teacher.class_type == 'distance' %}
                     checked
                     {% endif %}> Distance teaching</span>
                 </div>
@@ -44,8 +44,8 @@
             <div class="item">
                 <div>Subjects Taught</div>
                 <div>
-                    <input type="text" name="subjectsTaught" placeholder="Type the subjects separated by commas"
-                    value="{{teacher.subjectsTaught}}">
+                    <input type="text" name="subjects_taught" placeholder="Type the subjects separated by commas"
+                    value="{{teacher.subjects_taught}}">
                 </div>
             </div>
             <button type="submit" class="fullWidth">Save</button>

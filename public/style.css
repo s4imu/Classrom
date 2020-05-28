@@ -137,10 +137,10 @@ span#schoolYear{
     border-radius: 16px;
     color: var(--blue);
     margin-top: 8px;
-    margin-left: 8px;
+    margin-left: 2px;
     display: inline-block;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 12px;
     position: relative;
 }
 
@@ -281,4 +281,34 @@ tbody tr td:last-child a,
 .tableConteiner thead tr th:last-child,
 td:last-child {
     text-align: center;
+}
+
+/*---------Filter------------*/
+.tableConteiner .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.tableConteiner .header a{
+    margin: 0;
+    width: 120px;
+}
+
+.tableConteiner .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    grid-gap: 8px
+}
+
+.tableConteiner .header form input {
+    border: 1px solid #eee;
+    padding: 4px 8px;
+    box-sizing: border-box;
+}
+
+.tableConteiner .header form button {
+    margin: 0;
+    width: 100%;
 }

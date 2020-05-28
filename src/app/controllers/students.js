@@ -9,7 +9,7 @@ module.exports = {
             for(let student of students){
                 newStudents.push({
                     ...student,
-                    schoolYear: student.schoolYear.split(",")
+                    school_year: grade(student.school_year)
                 })
             }
 
@@ -19,7 +19,9 @@ module.exports = {
     },
     create(req, res) {
         
-        return res.render('students/create')
+        Student.teacherSelectOption(function(options) {
+            return res.render('students/create', { teacherOptions: options })
+        })
     },
     show(req, res) {
         
@@ -29,7 +31,7 @@ module.exports = {
             }
 
             student.birth = date(student.birth).birthDay
-            student.schoolYear = grade(student.schoolYear)
+            student.school_year = grade(student.school_year)
 
             return res.render("students/show", { student })
         })
@@ -43,6 +45,7 @@ module.exports = {
                 return res.send("Preencha todos os campos")
             }
         }
+
         
         Student.create(req.body, function(student) {
             return res.redirect(`/students/${student.id}`)
@@ -57,7 +60,9 @@ module.exports = {
 
             student.birth = date(student.birth).iso
         
-            return res.render("students/edit", { student })
+            Student.teacherSelectOption(function(options) {
+                return res.render('students/edit', { student, teacherOptions: options })
+            })
         })
     },
     put(req, res) {

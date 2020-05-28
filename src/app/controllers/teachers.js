@@ -1,23 +1,31 @@
-const { age, education, date } = require('../../lib/utils')
+const { age, education, date, array } = require('../../lib/utils')
 const Teacher = require('../models/Teacher')
 
 module.exports = {
     index(req, res) {
 
-        Teacher.all(function(teachers) {
+        const { filter } = req.query
 
-            let newTeachers = []
-            for (let teacher of teachers){
-                newTeachers.push({
-                    ...teacher,
-                    subjectsTaught: teacher.subjectsTaught.split(",")
-                })
-            }
+        if(filter) {
 
-        return res.render('teachers/index', {teachers: newTeachers})
+            Teacher.findBy(filter, function(teachers) {
 
-        })
+                let newTeachers = array(teachers) 
 
+                return res.render('teachers/index', { filter, teachers: newTeachers })
+
+            })
+    
+        } else {
+
+            Teacher.all(function(teachers) {
+
+                let newTeachers = array(teachers) 
+
+                return res.render('teachers/index', {teachers: newTeachers})
+
+            })
+        }
     },
     create(req, res) {
         
@@ -30,10 +38,10 @@ module.exports = {
                 return res.send("Teacher not found")
             }
 
-            teacher.age = age(teacher.birth)
-            teacher.educationLevel = education(teacher.educationLevel)
-            teacher.subjectsTaught = teacher.subjectsTaught.split(",")
-            teacher.createdAt = date(teacher.createdAt).format
+            teacher.age = age(teacher.birth_date)
+            teacher.education_level = education(teacher.education_level)
+            teacher.subjects_taught = teacher.subjects_taught.split(",")
+            teacher.created_at = date(teacher.created_at).format
 
             return res.render("teachers/show", { teacher })
         })
@@ -59,7 +67,7 @@ module.exports = {
                 return res.send("Teacher Not Found")
             }
 
-            teacher.birth = date(teacher.birth).iso
+            teacher.birth_date = date(teacher.birth_date).iso
         
             return res.render("teachers/edit", { teacher })
         })

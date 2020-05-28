@@ -3,13 +3,24 @@
 {% block content %}
 
     <div class="card tableConteiner">
-        <a href="http:/teachers/create">Register</a>
+        <div class="header">
+            <a class="button" href="http:/teachers/create">Register</a>
+            <form action="/teachers" method="GET">
+                <input 
+                type="text" 
+                name="filter"
+                placeholder="Filter by name or subject"
+                value="{{filter}}">
+                <button type="submit">Filter</button>
+            </form>
+        </div>
         <table width="100%">
 
             <thead>
                 <tr>
                     <th>Teacher</th>
                     <th>Monitoring</th>
+                    <th>Students</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -17,14 +28,15 @@
                 {% for teacher in teachers %}
                     <tr>                   
                         <td>
-                            <span style="background-image: url({{teacher.avatarUrl}})"></span>
+                            <span style="background-image: url({{teacher.avatar_url}})"></span>
                             {{teacher.name}}
                         </td>
                         <td>
-                            {% for monitor in teacher.monitoring %}
-                                <span id="monitoring">{{monitor}}</span>
+                            {% for subject in teacher.subjects_taught %}
+                                <span id="monitoring">{{subject}}</span>
                             {% endfor %}
                         </td>
+                        <td>{{teacher.total_students}}</td>
                         <td><a href="/teachers/{{teacher.id}}">View</a></td>
                     </tr>
                 {% endfor %}
