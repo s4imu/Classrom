@@ -18,5 +18,5 @@ nunjucks.configure('src/app/views', {
     watch: true
 })
 
-server.listen(4000, function() {
+server.listen(5000, function() {
 }) 

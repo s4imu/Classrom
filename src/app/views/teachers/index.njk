@@ -3,6 +3,7 @@
 {% block content %}
 
     <div class="card tableConteiner">
+       
         <div class="header">
             <a class="button" href="http:/teachers/create">Register</a>
             <form action="/teachers" method="GET">
@@ -14,6 +15,7 @@
                 <button type="submit">Filter</button>
             </form>
         </div>
+
         <table width="100%">
 
             <thead>
@@ -42,6 +44,12 @@
                 {% endfor %}
             </tbody>
         </table>
+
+        <div class="pagination"
+            data-page = {{pagination.page}}
+            data-total = {{pagination.total}}
+            data-filter = {{filter}}>
+        </div>
     </div>
 
 {% endblock content %}

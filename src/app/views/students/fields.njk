@@ -30,13 +30,13 @@
     <div>School Year</div>
     <div>
         <select name="school_year" value="{{student.school_year}}">
-            <option value="6th" {% if student.school_year == "6th" %} selected {% endif %}>6th Grade</option>
-            <option value="7th" {% if student.school_year == "7th" %} selected {% endif %}>7th Grade</option>
-            <option value="8th" {% if student.school_year == "8th" %} selected {% endif %}>8th Grade</option>
-            <option value="9th" {% if student.school_year == "9th" %} selected {% endif %}>Freshman Year</option>
-            <option value="10th" {% if student.school_year == "10th" %} selected {% endif %}>Sophomore Year</option>
-            <option value="11th" {% if student.school_year == "11th" %} selected {% endif %}>Junior Year</option>
-            <option value="12th" {% if student.school_year == "12th" %} selected {% endif %}>Senior Year</option>
+            <option value="6th Grade" {% if student.school_year == "6th" %} selected {% endif %}>6th Grade</option>
+            <option value="7th Grade" {% if student.school_year == "7th" %} selected {% endif %}>7th Grade</option>
+            <option value="8th Grade" {% if student.school_year == "8th" %} selected {% endif %}>8th Grade</option>
+            <option value="Freshman Year" {% if student.school_year == "9th" %} selected {% endif %}>Freshman Year</option>
+            <option value="Sophomore Year" {% if student.school_year == "10th" %} selected {% endif %}>Sophomore Year</option>
+            <option value="Junior Year" {% if student.school_year == "11th" %} selected {% endif %}>Junior Year</option>
+            <option value="Senior Year" {% if student.school_year == "12th" %} selected {% endif %}>Senior Year</option>
         </select>
     </div>
 </div>
